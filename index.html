@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel ="stylesheet" href="/modules/followers-box/followers-box.css">
+<link rel ="stylesheet" href="/modules/post-box/post-box.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	
+	}
+
+.navbar {
+  width: 100%;
+  background-color: #67B4A3;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #67AFB4;
+}
+
+.search-container {
+  float: right;
+  height: 40px;
+}
+
+input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.active {
+  background-color: #67B48F;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+.profile-navbar-col3{
+	width : 160px;
+	float : right;
+	height: 100%;
+	position: relative;
+}
+
+.post-button{
+    margin: 5px;
+    background: skyblue;
+    color: black;
+    font-size: 1.0em;
+	font-weight: 600;
+    text-align: center;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    line-height: 38px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px #fdfdfd;
+}
+
+.post-button:hover{
+    cursor: pointer;
+    background: white;
+}
+
+.mainbody{
+	width : 1200px;
+	height: auto;
+	margin: 10px auto 10px auto ; 
+	overflow: hidden;
+}
+
+.col1{
+	width : 23%;
+	float : left;
+	height: 300px;
+
+}
+
+.col2{
+	width : 40%;
+	margin-left : 1%;
+	float : left;
+	height: 100%;
+  border: 0.2 px solid #000
+}
+
+.col3{
+	width : 33%;
+	float : right;
+	height: 250px;
+  margin-left: 1%;
+border: 2px solid #000;
+border-radius: 10px;	
+}
+
+.textbox-message-inner{
+    background-color: white;
+    position: absolute;
+    top:10px;
+    bottom:10px;
+    left:10px;
+    right:10px;
+    border-radius: 15px;
+    border: 2px solid #70C8FF;
+}
+
+.post{
+  float:left;
+}
+
+.follower{
+  float:right;
+  width: 20%;
+  height: 100px;
+  align: center;
+}
+
+.post img{
+  width:70%;
+  height:120px;
+  margin-top: 2px;
+  margin-right: 10px;
+  margin:2px;
+}
+
+
+.postcreate{
+	width : 80px;
+	float : right;
+	height: auto;
+	position: relative;
+ margin-right:6px;
+ margin-bottom: 5px;
+}
+.postfinal{
+    
+    background: #333;
+    color: #fff;
+    font-size: 0.7em;
+    text-align: center;
+    position : relative;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    line-height: 35px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px #fdfdfd;
+
+}
+
+
+.postfinal:hover{
+    cursor: pointer;
+    background: #444;
+}
+.following{
+	width : 160px;
+	float : right;
+	height: 100%;
+	position: relative;
+}
+
+.following-button{
+    margin: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 0.7em;
+    text-align: center;
+    position : relative;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    line-height: 35px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px #fdfdfd;
+}
+
+.following-button:hover{
+    cursor: pointer;
+    background: #444;
+}
+
+.headline{
+  margin-left:5px;
+}
+
+</style>
+<body>
+<div class="navbar">
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <a href="#"><i class="fa fa-fw fa-bell"></i> Notifications</a> 
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> Messages</a>
+
+  <div class="search-container">
+  <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  </div>
+
+  <div class ="profile-navbar-col3">
+  	<div class = "post-button">
+		Post
+    </div>
+   </div>	
+</div>
+
+<div class = "mainbody" id = "mainbody">
+  <div class = "col1"> 
+	  <div class = "followers-box">
+		  <div class = "followers-box-user-info-wrapper">
+			  <div class = "followers-box-user-icon-wrapper">
+					<div class = "followers-box-user-icon">
+    				<img src = "/1x/dp.jpg">
+					</div>
+	    		<div class = "followers-box-user-name">
+						<p class = "user-text-name"> Artnation Task </p>
+						<p class = "user-name"> @_artnation </p>
+		  		</div>
+			  </div>
+		
+				<div class = "followers-box-toolbar">
+					<div class = "followers-box-toolbar-col1">
+						<span class = "posts-toolbar-title">Posts</span>
+						<span class = "posts-toolbar-count">46</span>
+					</div>
+					<div class = "followers-box-toolbar-col2">
+						<span class = "posts-toolbar-title">Followers</span>
+						<span class = "posts-toolbar-count">100</span>
+					</div>
+					<div class = "followers-box-toolbar-col3">
+						<span class = "posts-toolbar-title">Following</span>
+		    		<span class = "posts-toolbar-count">58</span>
+					</div>
+	    	</div>
+			</div>
+			<div class ="followers-box-banner">
+    		<img src = "/1x/artnationbanner4.jpg">
+			</div>
+		</div>
+	</div>
+	
+  <div class = "col2"> 
+		<div class = "post-box-content">
+      <div class = "postbox-user-icon-col">
+        <div class = "postbox-user-icon"></div>
+      </div>
+      <div class = "postbox-message-content">
+        <div class = "textbox-message" >
+          <div class = "textbox-message-inner">
+          </div>
+        </div>
+        
+       <div class = "textbox-toolbar">
+          <div class = "row">
+            <div col = "26">
+              <div class = "row">
+                <div col = "10">
+                <i class="material-icons">&#xe439;</i>
+                <i class="material-icons">computer</i>
+                <i class="fa fa-play-circle-o"  style="font-size:24px"></i>                
+                </div>
+              </div>
+            </div>
+            <div class = "postcreate">
+              <div class ="postfinal">
+        	      
+		              Post
+              
+              </div>
+            </div>
+          </div>
+        </div>  
+    </div>
+	</div>
+	</div>
+  <div class = "col3"> 
+    <span class = "headline"> <h2>Suggestions</h2> </span>
+    <div class = "post-follower">
+      <div class = "post"> 
+        <img src = "/1x/artnationbanner2.jpg" alt = "AN">
+      
+      
+      
+      </div>
+      <div class = "follower">
+        <div class ="following">
+        	<div class = "following-button">
+		        Follow
+          </div>
+        </div>	
+      </div>
+    </div>  
+  </div>			
+</div>
+	
+<marquee><h2> This is the task for Artnation Web Development Intern Position. I have used Html, CSS and a bit of bootstrap to get the icons used in the outlook.</h2></marquee>
+
+</body>
+</html> 
