@@ -1,0 +1,53 @@
+.post-box-content{
+    height: 200px;
+    width: 100%;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border: 1px solid #000;
+    border-radius:5px;
+}
+
+.postbox-user-icon-col{
+    float: left;
+    margin-top: 12px;
+    height:100%;
+    width: 16%;
+    overflow: hidden;
+}
+
+.postbox-user-icon{
+    float: right;
+    height:60px;
+    width: 60px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right:5px;
+    background: turquoise;
+    background-image: url('/1x/home.png');
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    border: 1px solid #000;
+    background-size: 20px;
+    background-position: center;
+}
+
+.postbox-message-content{
+    float: right;
+    width: 82%;
+    margin-top: 12px;
+    height:100%;
+    overflow: hidden;
+}
+
+.textbox-message{
+    height: 60%;
+    display: block;
+    width: 100%;
+    position:relative;
+}
+
+.textbox-toolbar{
+    height: 40%;
+    display: block;
+    width: 100%;
+}
